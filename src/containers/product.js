@@ -1,5 +1,6 @@
 import {connect} from "react-redux"
 import Product from "../component/product"
+import * as actions from "../store/actions/product"
 
 // connect 将redux的状态通过props传递给组件，高阶组件
 const mapStateToProps=(state)=>{
@@ -10,8 +11,8 @@ const mapStateToProps=(state)=>{
 }
 const mapDispatchToProps=(dispatch)=>{
     return {
-        log(){
-            console.log("111");
+        fetchProduct(){
+            dispatch(actions.getProduct())
         }
     }
 }
